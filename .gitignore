@@ -1,0 +1,14 @@
+/bin/
+/log/
+target/
+.settings
+.classpath
+.project
+.springBeans
+.DS_Store
+*.log
+*.log.*
+cfg.ini
+.idea
+/*.iml
+*.iml
