@@ -1,7 +1,9 @@
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 
-mnist = input_data.read_data_sets('E:\\java_other\\python\\data\\mnist\\',
+work='E:\\java_other\\python\\data\\mnist\\'
+home='E:\\python\\data\\mnist\\'
+mnist = input_data.read_data_sets(home,
                                   one_hot=True)
 
 
