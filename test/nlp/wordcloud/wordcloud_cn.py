@@ -86,10 +86,13 @@ image_colors_byImg = ImageColorGenerator(back_coloring)
 # we could also give color_func=image_colors directly in the constructor
 plt.imshow(wc.recolor(color_func=image_colors_byImg), interpolation="bilinear")
 plt.axis("off")
+plt.show()
+'''
 plt.figure()
 plt.imshow(back_coloring, interpolation="bilinear")
 plt.axis("off")
-plt.show()
+'''
+
 
 # save wordcloud
 wc.to_file(path.join(d, imgname2))
