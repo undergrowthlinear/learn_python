@@ -1,0 +1,7 @@
+setup.py
+content/__init__.py
+content/mock_person.py
+firstthirdpackage.egg-info/PKG-INFO
+firstthirdpackage.egg-info/SOURCES.txt
+firstthirdpackage.egg-info/dependency_links.txt
+firstthirdpackage.egg-info/top_level.txt
