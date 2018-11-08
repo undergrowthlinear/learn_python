@@ -5,6 +5,7 @@ import sys
 import jieba
 
 # 11144
+#jieba.load_userdict('seriesname_dict.txt')
 i = 0
 count = 0
 f = open("E:\\java_other\\python\data\\fasttext_test\\series_rela"
@@ -47,22 +48,25 @@ for line in f:
     if lable in series_set:
         l_lable = lable.split(",")
         lable = l_lable[0].split(" ")[0]
-        seg_title = jieba.cut(title.replace("\t", " ").replace("\n", " "))
-        seg_content = jieba.cut(content.replace("\t", " ").replace("\n", " "))
-        outline = " ".join(seg_title) + " " + " ".join(seg_content)
-        outline = outline + "\t" + "__label__" + lable + "\n"
-        if i < 8000:
-            outf_train.write(outline)
-        else:
-            outf_test.write(outline)
+        if lable in content:
+            seg_title = jieba.cut(title.replace("\t", " ").replace("\n", " "))
+            seg_content = jieba.cut(content.replace("\t", " ").replace("\n", " "))
+            outline = " ".join(seg_title) + " " + " ".join(seg_content)
+            outline = outline + "\t" + "__label__" + lable + "\n"
+            if i < 7000:
+                outf_train.write(outline)
+            else:
+                outf_test.write(outline)
 
-        if i % 2500 == 0:
-            count = count + 1
-            sys.stdout.flush()
-            sys.stdout.write("#")
-        i = i + 1
+            if i % 2500 == 0:
+                count = count + 1
+                sys.stdout.flush()
+                sys.stdout.write("#")
+            i = i + 1
+        else:
+            print(lable+" not contained content "+"\n")
     else:
-        print(lable + "\n")
+        print(lable+" num less " + "\n")
 
 for item in series_filter_set:
     f_carseriesname_count_filter.write(item + "\n")
