@@ -1,3 +1,5 @@
+#coding=utf-8
+
 print("输入你的姓名:"," Hello World")
 #name=input()
 #print(name)
@@ -10,3 +12,8 @@ s4 = r'''Hello,Lisa!'''
 print(n)
 print(f)
 print(s1,s2,s3,s4)
+s = "中文"
+s = u'的'
+s_gb = s.encode('utf-8')
+print(s_gb)
+#print(str('\ueccb').decode('utf-8'))
