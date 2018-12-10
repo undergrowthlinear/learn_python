@@ -12,3 +12,9 @@ cfg.ini
 .idea
 /*.iml
 *.iml
+*.pyc
+*/logs/
+*/log/
+*/logs/*
+*/log/*
+events.out.tfevents.*
