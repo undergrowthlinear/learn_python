@@ -32,7 +32,7 @@ t1 = BashOperator(
     dag=dag)
 # 注意最后的空格 必须要保留 如果使用Jinja template,最后的空格则不用
 # airflow机制如此,不要问为什么
-run_script_file = "sh /home/iyourcar_test/tools/airflow_rela/example" \
+run_script_file = "sh /home/iyourcar_test/tools/airflow_rela/example_airflow" \
                   "/script/hello_world.sh "
 
 t2 = BashOperator(
