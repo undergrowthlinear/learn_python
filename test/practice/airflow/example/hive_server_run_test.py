@@ -32,17 +32,19 @@ t1 = BashOperator(
     bash_command='date',
     dag=dag)
 
+hql_file = 'c_day_user.hql'
+
 t2 = HiveOperator(
     hive_cli_conn_id='hiveserver2_default',  # 指定conn_id
     # hive_cli_default在web界面的admin/connections下面进行配置
     task_id='hive_server_run',
     # 通过 `-hiveconf "key"="value"`` 接收参数
-    hql='SELECT count(uid) FROM dwd_abtest_day_user where d="${hiveconf:day}" ',
+    hql=hql_file,
     # 设置使用的数据库
     schema='iyourcar',
     hiveconfs={'day': '2019-01-14'},
-    # 设置mr运行队列
-    mapred_queue='hive',
+    # 设置mr运行队列 default
+    mapred_queue='dailyHour',
     mapred_job_name='count_day_user_20190114',
     dag=dag)
 
