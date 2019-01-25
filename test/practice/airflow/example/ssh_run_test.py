@@ -33,7 +33,7 @@ t1 = BashOperator(
     dag=dag)
 
 # 注意最后的空格 必须要保留 如果使用Jinja template,最后的空格则不用
-# airflow机制如此,不要问为什么
+# airflow机制如此,(空格其实是用于转义)
 t2 = SSHOperator(
     ssh_conn_id='ssh_gzxhop03_lc', # 指定conn_id
     # ssh_gzxhop03_lc在web界面的admin/connections下面进行配置
