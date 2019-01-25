@@ -31,7 +31,7 @@ t1 = BashOperator(
     bash_command='date',
     dag=dag)
 # 注意最后的空格 必须要保留 如果使用Jinja template,最后的空格则不用
-# airflow机制如此,不要问为什么
+# airflow机制如此,(空格其实是用于转义)
 run_script_file = "sh /home/iyourcar_test/tools/airflow_rela/example_airflow" \
                   "/script/hello_world.sh "
 
